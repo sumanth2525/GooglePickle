@@ -2,6 +2,7 @@ node_modules/
 .env
 server/.env
 app/js/config.local.js
+app/firebase-messaging-sw.js
 test-results/
 .playwright/
 playwright-report/
