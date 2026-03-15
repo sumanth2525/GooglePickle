@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pickleball Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#80f20d",
+                        "background-light": "#f7f8f5",
+                        "background-dark": "#192210",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-6 pb-2">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary overflow-hidden border border-primary/30">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">Messages</h1>
+</div>
+<button class="size-10 rounded-full bg-primary flex items-center justify-center text-background-dark shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-xl">edit_square</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="w-full bg-white dark:bg-background-dark/50 border-none rounded-xl py-3 pl-11 pr-4 text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-slate-400 transition-all shadow-sm" placeholder="Search conversations..." type="text"/>
+</div>
+<!-- Tabs -->
+<div class="flex mt-6 border-b border-slate-200 dark:border-slate-800">
+<button class="flex-1 py-3 text-sm font-semibold border-b-2 border-primary text-slate-900 dark:text-slate-100">
+                Event Chats
+            </button>
+<button class="flex-1 py-3 text-sm font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                Direct Messages
+            </button>
+</div>
+</header>
+<!-- Chat List -->
+<main class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<!-- Chat Item Active/Unread -->
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-white dark:hover:bg-slate-800/50 transition-colors cursor-pointer group">
+<div class="relative">
+<div class="size-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary overflow-hidden">
+<img class="object-cover size-full" data-alt="Portrait of a smiling tennis coach" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_vkk8UgZ8X-mAj7kC1TZxjuwlaqgUSE8lLvaI_b91AP4GIGM6XL_2QkDLIJlF4IatHBGYa03S9rJ4CxCWAt2RdBWfSmrhLUDo7cFafxRqBvR_1GdLPbCsnuqENgVQNRe63LNqmQe4s7k1j7QFpCpqLwSmuZewHL9g-eHn-IlTFwxdIT8A_p-Zb_U0LvVgxalziEjDrPtcrgXiyT-JvIZlJw9AyWDiuXzceLZrJwGhcX1dPmVPfDWaGq6PepBMUYGrORSElj2-GLI"/>
+</div>
+<div class="absolute -bottom-1 -right-1 size-4 bg-primary border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 truncate">Saturday Open Play</h3>
+<span class="text-[10px] font-semibold text-primary uppercase">10:45 AM</span>
+</div>
+<div class="flex justify-between items-center mt-0.5">
+<p class="text-sm text-slate-600 dark:text-slate-400 truncate pr-4 font-medium">Mike: See you all at 10 AM! Don't forget water.</p>
+<span class="bg-primary text-background-dark text-[10px] font-black h-5 min-w-5 flex items-center justify-center rounded-full px-1 shadow-sm">3</span>
+</div>
+</div>
+</div>
+<!-- Chat Item -->
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-white dark:hover:bg-slate-800/50 transition-colors cursor-pointer group">
+<div class="size-14 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-400 overflow-hidden">
+<img class="object-cover size-full" data-alt="Aerial view of green pickleball courts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzAY5Pv43iGI6avMiIbrV9yyq381stKtiZ3_BHKhRJq7l4zfc4qVleBnBN_bs9g0NvHVT7rOqq_NZsGJHiI3pZFhzr-YEZbyHlcasP1ifHHNS9iMZKtrJjXg7nEYvKDpEtrD2ipn1hjToHqimRoqD8nGrEZg_hAFzSgoYvoRR6h4DnGq7HsnJw6lHfkcHNohR0XJsHMM3TzlPgMr-on3xnwsqZcvjwbGB7zdk2D-p1st3yrb_87dMlxWbRjWA0EpqSiKeJ_bSlvqc"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-slate-900 dark:text-slate-100 truncate">Sunset Tournament</h3>
+<span class="text-[10px] font-medium text-slate-400 uppercase">9:12 AM</span>
+</div>
+<div class="flex justify-between items-center mt-0.5">
+<p class="text-sm text-slate-500 dark:text-slate-400 truncate pr-4">Sarah added a new location to the event.</p>
+</div>
+</div>
+</div>
+<!-- Chat Item -->
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-white dark:hover:bg-slate-800/50 transition-colors cursor-pointer group">
+<div class="size-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary overflow-hidden">
+<img class="object-cover size-full" data-alt="Action shot of a pickleball paddle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ45CErDCyyHLZLxIabNxMjevPgRy-rxXGytZ7AlPxB31YBddiCO9yfVeOqVxzcsv_qcyPlR95U_q-1u03Kkm_Vvl5cnw_3KntgmHrDE_FDhUfixo3araM6G-ip4kjp-Vm0WhEK-kGj0THHn-bjMOaMu-17eQLmwdjSFVHOmUXmmkzkb-wGY1Gxn44XICqmmxxQ07X7VnF_5VglsLg4cFEeM_gFKMQZy7me4KBDoywmhJaEqWSh0O-jj3dy3NW4IivpKZbZIEY_N4"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-slate-900 dark:text-slate-100 truncate">Advanced Drills Group</h3>
+<span class="text-[10px] font-medium text-slate-400 uppercase">Yesterday</span>
+</div>
+<div class="flex justify-between items-center mt-0.5">
+<p class="text-sm text-slate-500 dark:text-slate-400 truncate pr-4">You: Thanks for the feedback on my dink!</p>
+<span class="material-symbols-outlined text-sm text-primary">done_all</span>
+</div>
+</div>
+</div>
+<!-- Chat Item -->
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-white dark:hover:bg-slate-800/50 transition-colors cursor-pointer group">
+<div class="size-14 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-400 overflow-hidden">
+<img class="object-cover size-full" data-alt="People collaborating around a table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDej7r17dfPXfq3GQIRyMK6q8GQ6QhvWtfmWpmbbDmorJM9lmCD7l9xsOqB0Vi8KC9Nd4Ia3mD2f_P58P9U8LrSBc90RP56m5KyjnjKMTZaaG_wPCSxFERU1uS3nyLIQgsk27d_-3AYpE_TQD8L5J5jwBeGEqWLMu291vVOfg7RtAo67zi18HDPJb5fL2O2B8rBCZZSlNYVYkNyEnCah_AWftnWsIf8DURS4TlpxUPT6ThwuQn65nQq5mC77Y7xNq62E29ihmjs4PQ"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-slate-900 dark:text-slate-100 truncate">Morning Crew 🎾</h3>
+<span class="text-[10px] font-medium text-slate-400 uppercase">Yesterday</span>
+</div>
+<div class="flex justify-between items-center mt-0.5">
+<p class="text-sm text-slate-500 dark:text-slate-400 truncate pr-4">Alex: Who's in for 7 AM tomorrow?</p>
+</div>
+</div>
+</div>
+<!-- Chat Item -->
+<div class="flex items-center gap-4 p-3 rounded-xl hover:bg-white dark:hover:bg-slate-800/50 transition-colors cursor-pointer group">
+<div class="size-14 rounded-lg bg-primary/5 flex items-center justify-center text-primary overflow-hidden">
+<span class="material-symbols-outlined text-3xl">sports_tennis</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<h3 class="font-semibold text-slate-900 dark:text-slate-100 truncate">Ladder League Week 4</h3>
+<span class="text-[10px] font-medium text-slate-400 uppercase">Tuesday</span>
+</div>
+<div class="flex justify-between items-center mt-0.5">
+<p class="text-sm text-slate-500 dark:text-slate-400 truncate pr-4">The match schedule has been updated.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pb-8 pt-2 px-6 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">home</span>
+<span class="text-[10px] font-semibold text-slate-400 group-hover:text-primary">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">calendar_month</span>
+<span class="text-[10px] font-semibold text-slate-400 group-hover:text-primary">Events</span>
+</a>
+<a class="flex flex-col items-center gap-1 group relative" href="#">
+<span class="material-symbols-outlined active-icon text-primary">chat_bubble</span>
+<span class="text-[10px] font-bold text-primary">Chat</span>
+<div class="absolute -top-1 -right-1 size-2 bg-primary rounded-full"></div>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">person</span>
+<span class="text-[10px] font-semibold text-slate-400 group-hover:text-primary">Profile</span>
+</a>
+</nav>
+</body></html>

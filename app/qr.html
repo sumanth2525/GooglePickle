@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Scan to open on mobile — Pickleball Community</title>
+  <style>
+    :root { --primary: #80f20d; --primary-dark: #192210; --bg: #f7f8f5; --text: #334155; --muted: #64748b; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: var(--bg);
+      padding: 24px;
+      box-sizing: border-box;
+    }
+    h1 { font-size: 1.35rem; color: var(--text); margin-bottom: 6px; text-align: center; font-weight: 700; }
+    .sub { color: var(--muted); font-size: 0.875rem; margin-bottom: 20px; text-align: center; max-width: 340px; }
+    .tip {
+      background: #fef3c7;
+      color: #92400e;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      max-width: 340px;
+      margin-bottom: 20px;
+      line-height: 1.45;
+    }
+    .tip code { background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.85em; }
+    .form { margin-bottom: 24px; width: 100%; max-width: 320px; }
+    .form label { display: block; font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; font-weight: 500; }
+    .form input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+    }
+    .form input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px rgba(128, 242, 13, 0.25); }
+    .form .row { display: flex; gap: 10px; }
+    .form .row input:first-child { flex: 2; }
+    .form .row input:last-child { flex: 1; min-width: 0; }
+    .form .hint { font-size: 0.7rem; color: #94a3b8; margin-top: 8px; }
+    .qr-wrap { padding: 16px; background: #fff; border-radius: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.06); margin-bottom: 20px; }
+    .qr-wrap img { display: block; border-radius: 10px; width: 260px; height: 260px; }
+    .link-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; max-width: 340px; }
+    .link-row a { color: var(--primary); font-weight: 600; word-break: break-all; font-size: 0.9rem; }
+    .link-row a:hover { text-decoration: underline; }
+    .btn { background: var(--primary); color: var(--primary-dark); border: none; padding: 8px 14px; border-radius: 8px; font-weight: 600; font-size: 0.8rem; cursor: pointer; }
+    .btn:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <h1>Scan to open on mobile</h1>
+  <p class="sub">Use the same Wi‑Fi on your phone and computer. Enter this computer’s IP so the QR code works.</p>
+
+  <div class="tip">
+    <strong>Phone can’t open the link?</strong> Run <code>npm run serve:app:lan</code> (not serve:app) and allow port 3080 in Windows Firewall if asked.
+  </div>
+
+  <div class="form">
+    <label for="host">Computer IP address</label>
+    <div class="row">
+      <input id="host" type="text" placeholder="192.168.1.5" value="10.0.0.89" inputmode="decimal" />
+      <input id="port" type="text" placeholder="3080" value="63509" inputmode="numeric" />
+    </div>
+    <p class="hint">Windows: <code>ipconfig</code> → IPv4. Mac: System Settings → Network.</p>
+  </div>
+
+  <div class="qr-wrap">
+    <img id="qr" src="" width="260" height="260" alt="QR code"/>
+  </div>
+
+  <p class="sub" style="margin-bottom: 8px;">Or open this link on your phone:</p>
+  <div class="link-row">
+    <a id="url" href="">...</a>
+    <button type="button" class="btn" id="copy-btn">Copy</button>
+  </div>
+
+  <script>
+    var portEl = document.getElementById('port');
+    var hostEl = document.getElementById('host');
+    var qrEl = document.getElementById('qr');
+    var urlEl = document.getElementById('url');
+    var copyBtn = document.getElementById('copy-btn');
+
+    function getDefaultHost() {
+      if (typeof location !== 'undefined' && location.hostname && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1')
+        return location.hostname;
+      return '';
+    }
+
+    function getDefaultPort() {
+      if (typeof location !== 'undefined' && location.port && location.port !== '80' && location.port !== '443')
+        return location.port;
+      return '63509';
+    }
+
+    function getBase() {
+      var host = (hostEl && hostEl.value && hostEl.value.trim()) || getDefaultHost();
+      var port = (portEl && portEl.value && portEl.value.trim()) || getDefaultPort();
+      if (host)
+        return 'http://' + host + (port ? ':' + port : '') + '/';
+      return (typeof location !== 'undefined' && location.origin && location.origin !== 'file://')
+        ? location.origin + '/'
+        : 'http://10.0.0.89:63509/';
+    }
+
+    function updateQR() {
+      var base = getBase();
+      if (urlEl) {
+        urlEl.href = base;
+        urlEl.textContent = base;
+      }
+      if (qrEl)
+        qrEl.src = 'https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=' + encodeURIComponent(base);
+    }
+
+    hostEl.value = hostEl.value.trim() || getDefaultHost() || '10.0.0.89';
+    portEl.value = portEl.value.trim() || getDefaultPort() || '63509';
+    hostEl.addEventListener('input', updateQR);
+    hostEl.addEventListener('change', updateQR);
+    portEl.addEventListener('input', updateQR);
+    portEl.addEventListener('change', updateQR);
+    updateQR();
+
+    if (copyBtn && urlEl) {
+      copyBtn.addEventListener('click', function() {
+        var base = getBase();
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(base).then(function() {
+            copyBtn.textContent = 'Copied!';
+            setTimeout(function() { copyBtn.textContent = 'Copy'; }, 2000);
+          });
+        } else {
+          var sel = document.createRange();
+          sel.selectNodeContents(urlEl);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(sel);
+          document.execCommand('copy');
+          window.getSelection().removeAllRanges();
+          copyBtn.textContent = 'Copied!';
+          setTimeout(function() { copyBtn.textContent = 'Copy'; }, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

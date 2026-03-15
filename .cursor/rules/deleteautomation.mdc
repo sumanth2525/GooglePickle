@@ -1,0 +1,24 @@
+---
+description: When user says deleteautomationtesting, remove all E2E automation tests and related config from the project
+alwaysApply: true
+---
+
+# Delete automation testing (keyword)
+
+When the user says or requests **deleteautomationtesting** (in any form, e.g. "delete automation testing", "run deleteautomationtesting", "remove e2e per keyword"), do the following:
+
+1. **Delete** the automation (E2E) test suite and related files:
+   - Remove the directory `tests/e2e/` and all files inside it.
+   - Remove `playwright.config.js` from the project root.
+
+2. **Update `package.json`**:
+   - Remove from `scripts`: `test:e2e`, `test:e2e:ui`, `deleteautomation`.
+   - Remove from `devDependencies`: `@playwright/test`, `serve` (if present only for E2E).
+
+3. **Remove** the script that runs on the keyword file: `scripts/delete-automation-if-requested.js`.
+
+4. **Remove** any trigger file in the project root named `deleteautomationtesting` or `.deleteautomationtesting` if it exists.
+
+5. **Optionally** remove or shorten `AUTOMATION_README.md` (or remove it) since it documents the removed automation.
+
+Do not remove unit tests (`tests/unit/`) or API tests (`tests/api/`) or Vitest config—only the Playwright E2E automation and its docs/scripts.

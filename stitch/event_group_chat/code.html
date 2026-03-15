@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Morning Doubles @ Zilker - Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#80f20d",
+                "background-light": "#f7f8f5",
+                "background-dark": "#192210",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Header / TopAppBar -->
+<header class="sticky top-0 z-10 flex flex-col bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="flex items-center p-4 justify-between gap-3">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">arrow_back</span>
+</button>
+<div class="flex-1 min-w-0">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight truncate">Morning Doubles @ Zilker</h2>
+<p class="text-primary text-sm font-semibold">12 participants</p>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">info</span>
+</button>
+</div>
+</header>
+<!-- Chat Area -->
+<main class="flex-1 overflow-y-auto p-4 space-y-6">
+<!-- Date Divider -->
+<div class="flex justify-center my-4">
+<span class="px-3 py-1 bg-slate-200 dark:bg-slate-800 rounded-full text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Today</span>
+</div>
+<!-- Message Left -->
+<div class="flex items-end gap-3 max-w-[85%]">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-9 shrink-0 border-2 border-primary/20" data-alt="Avatar of a male participant smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfnnj93HcCKrO0oPsZtZ2dvfFBZvzluysSbubfqiQziCdsGUEwAycSyYcPJvVqDTfiDMEgVn7rKPsYahZXT2JYgmM60swoKWtzVhruiP_ScEzvoYLTM5bRPIu0PmCNupX6WZTkx5sn0VJiiE8Mq_0I5v3pYKEIIenMNXX0RZtTuIAQgOHNpCdlFFB45r-quYS1nArsbiG9Ezdzq5hs7VdXIEI283INie2-KMKRPXsEqVEDmZrU9jLayA9yteQRiJpz6gmqo8cAQJQ");'></div>
+<div class="flex flex-col gap-1 items-start">
+<div class="flex items-center gap-2">
+<span class="text-primary text-[12px] font-bold">Alex</span>
+<span class="text-slate-400 text-[10px]">07:15 AM</span>
+</div>
+<div class="text-sm font-normal leading-relaxed rounded-2xl rounded-bl-none px-4 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 shadow-sm border border-primary/5">
+                        Are we still on for 8 AM? The courts might be busy given the weather.
+                    </div>
+</div>
+</div>
+<!-- Message Right (Me) -->
+<div class="flex items-end gap-3 justify-end ml-auto max-w-[85%]">
+<div class="flex flex-col gap-1 items-end">
+<div class="flex items-center gap-2">
+<span class="text-slate-400 text-[10px]">07:18 AM</span>
+<span class="text-primary text-[12px] font-bold">Me</span>
+</div>
+<div class="text-sm font-normal leading-relaxed rounded-2xl rounded-br-none px-4 py-3 bg-primary text-slate-900 shadow-lg shadow-primary/20">
+                        Yes, I'm heading out now to grab a court! I'll text once I secure one. 🎾
+                    </div>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-9 shrink-0 border-2 border-primary" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYeDZB7UjkIjJ9jEd2u0HZsumSkos1LaEpQ04fKYdRfJ35c3At6f8UQSsl5zYzpSTm86s2M9CWjoprFI7eICXQMToTbx38NhYgt5oynRBxtak6IzO4g36Wh_367RKJNCDBdDTTqmcAA9QIuLfFa5lL2DQMKJRyhxkA1nVBGChRGqx_CB1oVwbv-xA23gMzYoG94Yh6_10jtWIb6wz7dASmpyZE0SmoGCcYdYZPiPjXcmLE3T7R6lmVJphnkxkRTcOwl4xQLstex0M");'></div>
+</div>
+<!-- Message Left -->
+<div class="flex items-end gap-3 max-w-[85%]">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-9 shrink-0 border-2 border-primary/20" data-alt="Avatar of a female participant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBxs0BXbV1FSzwUVg_1auK-0OHeQ0Fcqddex_shoKyTc4hwAgw-hyEqGKiXiTrIDoRwsmHYCaZctQGm7C5srjuFbed8kuH2Cp7mFxsSq1pKVsB85B1pLQxUZu8Qk7pRmoMo0PA0H3km8SLJtBptRqvCNsrhkF6B6Qt31SUO2qkUyKqX1lGTGvBr28L1sbIyV0V32kjnA8qtD1GNXZmC_GYcF29bbm7yPCfHTD_hM6Aqet72QJq0unB3o8dedFSW-vFaSmFJO7UeZhg");'></div>
+<div class="flex flex-col gap-1 items-start">
+<div class="flex items-center gap-2">
+<span class="text-primary text-[12px] font-bold">Jordan</span>
+<span class="text-slate-400 text-[10px]">07:22 AM</span>
+</div>
+<div class="text-sm font-normal leading-relaxed rounded-2xl rounded-bl-none px-4 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 shadow-sm border border-primary/5">
+                        I'm bringing the extra set of balls and some water bottles.
+                    </div>
+</div>
+</div>
+<!-- Image Message Left -->
+<div class="flex items-end gap-3 max-w-[85%]">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-9 shrink-0 border-2 border-primary/20" data-alt="Avatar of another participant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjIOUDSv0jPXT6RtYbV7Bl36_iGO0yyrN49gTjHAP48_vky1kQHWOXMynyEQ_PxUUmvPW1ztJ0zWmGQmWxhwEZQwmAe06ZlYiaQcmc7sIX30UixS_kp3jYkjoJfinZ8LRGLgmZO8jGUbRjvmjRFwyNEYqaK1O-ebSk8YOjaWxm1a7aS6YvNJgPan3ky8IGlNFbVDrhzNkkhyawp2S7S6tyg1hHW1hQ8RRqw_wb6_pPjRmaYmSz20j8DIE5OjHwjvOc7DIYIj6IEYA");'></div>
+<div class="flex flex-col gap-1 items-start w-full">
+<div class="flex items-center gap-2">
+<span class="text-primary text-[12px] font-bold">Taylor</span>
+<span class="text-slate-400 text-[10px]">07:25 AM</span>
+</div>
+<div class="overflow-hidden rounded-2xl rounded-bl-none border-4 border-white dark:border-slate-800 shadow-sm">
+<img class="w-full h-48 object-cover" data-alt="Close up of a pickleball paddle and ball on court" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0orxsSGPDL1JaD0gFIjmZGNcnTb55aQHG5-rJ7S12zly1rpV-grwR7_xNwjkNkCaWRHU_fYFPshVlCTDczc9odWgvbS7rExMFzwoNA8LMQhUkb56MMmJjquI-CP_Z-y7wco9znQY_fQA-Bg-2qLWSCd56TkhZCMR8xT1-O5AfOuJ5dLZck10FPJYohYuM8J8K_DuwFmws2CFLD71-K3hv21mFf-v4dJEZd8Yjz17zcGaVakgE7DjYXwwDFpabaUGutwd7RWDZ9Oc"/>
+</div>
+<div class="text-sm font-normal leading-relaxed rounded-2xl px-4 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 shadow-sm border border-primary/5 mt-1">
+                        Ready to go! See you guys there! 🏓
+                    </div>
+</div>
+</div>
+</main>
+<!-- Input Bar -->
+<footer class="p-4 bg-background-light dark:bg-background-dark border-t border-primary/10">
+<div class="flex items-center gap-2 bg-white dark:bg-slate-900 rounded-full px-4 py-2 shadow-inner border border-primary/5">
+<button class="flex items-center justify-center p-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<button class="flex items-center justify-center p-1 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mood</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm text-slate-800 dark:text-slate-200 placeholder-slate-400" placeholder="Type a message..." type="text"/>
+<button class="flex items-center justify-center size-9 bg-primary rounded-full text-slate-900 shadow-md shadow-primary/30 hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined font-bold">send</span>
+</button>
+</div>
+<!-- Safe area spacer for mobile -->
+<div class="h-2"></div>
+</footer>
+</div>
+</body></html>

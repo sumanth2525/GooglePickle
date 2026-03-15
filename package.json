@@ -1,0 +1,43 @@
+{
+  "name": "pickleball-community",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:unit": "vitest run",
+    "test:watch": "vitest",
+    "test:api": "vitest run --config vitest.api.config.js",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "serve:app": "serve app -l 3080",
+    "serve:app:lan": "serve app -l tcp://0.0.0.0:3080",
+    "serve:app:3082": "serve app -l 3082",
+    "auth-server": "node server/index.js",
+    "twilio-check": "node scripts/check-twilio.js",
+    "test:twilio": "vitest run tests/unit/auth-verify.test.js tests/unit/config.test.js",
+    "deleteautomation": "node scripts/delete-automation-if-requested.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"app/**/*.js\" \"server/**/*.js\" \"scripts/**/*.js\" \"tests/**/*.js\" \"*.config.js\"",
+    "format:check": "prettier --check \"app/**/*.js\" \"server/**/*.js\" \"scripts/**/*.js\" \"tests/**/*.js\" \"*.config.js\"",
+    "fix": "npm run lint:fix && npm run format",
+    "auto-fix": "node scripts/auto-fix.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "twilio": "^5.3.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.0",
+    "jsdom": "^25.0.0",
+    "@playwright/test": "^1.49.0",
+    "serve": "^14.2.4",
+    "eslint": "^9.0.0",
+    "@eslint/js": "^9.0.0",
+    "prettier": "^3.0.0"
+  }
+}

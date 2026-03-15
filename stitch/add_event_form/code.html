@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#80f20d",
+                        "background-light": "#f7f8f5",
+                        "background-dark": "#192210",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Host Pickleball Event</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- Header Section -->
+<header class="px-6 pt-8 pb-4">
+<div class="flex items-center justify-between mb-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200/50 dark:bg-slate-800/50">
+<span class="material-icons text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold">Host an Event</h1>
+<div class="w-10"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Gather the community and hit the courts.</p>
+</header>
+<!-- Main Form -->
+<main class="px-6 space-y-6">
+<!-- Event Name -->
+<div class="space-y-2">
+<label class="text-sm font-semibold ml-1">Event Name</label>
+<input class="w-full bg-white dark:bg-slate-800 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 shadow-sm" placeholder="Morning Smash Session" type="text"/>
+</div>
+<!-- Date & Time Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold ml-1">Date</label>
+<div class="relative">
+<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">calendar_today</span>
+<input class="w-full bg-white dark:bg-slate-800 border-none rounded-xl p-4 pl-12 focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 shadow-sm appearance-none" type="date"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold ml-1">Time</label>
+<div class="relative">
+<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm">schedule</span>
+<input class="w-full bg-white dark:bg-slate-800 border-none rounded-xl p-4 pl-12 focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 shadow-sm appearance-none" type="time"/>
+</div>
+</div>
+</div>
+<!-- Location Search -->
+<div class="space-y-2">
+<label class="text-sm font-semibold ml-1">Location</label>
+<div class="relative">
+<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">location_on</span>
+<input class="w-full bg-white dark:bg-slate-800 border-none rounded-xl p-4 pl-12 focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 shadow-sm" placeholder="Search court or address" type="text"/>
+</div>
+<div class="mt-2 h-32 w-full rounded-xl overflow-hidden relative border border-slate-200 dark:border-slate-700">
+<img class="w-full h-full object-cover grayscale opacity-60" data-alt="Map showing local pickleball court location" data-location="Austin, Texas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnjA4H5JTxkSv3WPKWkoo7wPP8clAj2pMk5j_8sQ1M6aSDmNri3NHIdoxUQ8UW_w0skPWDTk8qpVr-cmb67AyJPSb6AUY5BEHeF8vNFLn37L7jAhtlwcjPpbJ0J1_yLg87OedzRjm7Rciq66ZNI0IdT-WnjjR-4w1VrXDbfJyg4oeWXSvnBpALOyRLXD8g7jIbAp7jZSfLqpzIgd4HX-cD1g74NSDdEjpXVCf5iMmGfbg_yZkU0L_qBfCdIJuv9DzyDFLuF7xSoMA"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary p-2 rounded-full shadow-lg">
+<span class="material-icons text-background-dark">place</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Players & Format -->
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-semibold ml-1">Players Needed</label>
+<div class="flex items-center bg-white dark:bg-slate-800 rounded-xl p-1 shadow-sm">
+<button class="w-10 h-10 flex items-center justify-center text-primary"><span class="material-icons">remove_circle_outline</span></button>
+<input class="w-full bg-transparent border-none text-center focus:ring-0 font-bold" type="number" value="4"/>
+<button class="w-10 h-10 flex items-center justify-center text-primary"><span class="material-icons">add_circle_outline</span></button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold ml-1">Game Format</label>
+<select class="w-full bg-white dark:bg-slate-800 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 shadow-sm appearance-none">
+<option>Doubles</option>
+<option>Singles</option>
+<option>Open Play</option>
+</select>
+</div>
+</div>
+<!-- Skill Level Selector -->
+<div class="space-y-3">
+<label class="text-sm font-semibold ml-1">Target Skill Level</label>
+<div class="grid grid-cols-3 gap-3">
+<button class="py-3 rounded-xl border-2 border-primary bg-primary/10 text-slate-900 dark:text-white font-medium text-sm">
+                    Beginner
+                </button>
+<button class="py-3 rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-medium text-sm">
+                    Intermediate
+                </button>
+<button class="py-3 rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-medium text-sm">
+                    Advanced
+                </button>
+</div>
+</div>
+<!-- Create Button -->
+<div class="pt-4 pb-8">
+<button class="w-full bg-primary hover:opacity-90 transition-opacity text-slate-900 font-bold py-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span>Create Event</span>
+<span class="material-icons">sports_tennis</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 px-8 py-4">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">calendar_today</span>
+</button>
+<div class="relative -mt-10">
+<button class="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/40 text-slate-900">
+<span class="material-icons text-3xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">chat_bubble_outline</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">person_outline</span>
+</button>
+</div>
+</nav>
+</body></html>

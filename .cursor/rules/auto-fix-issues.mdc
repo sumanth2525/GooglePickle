@@ -1,0 +1,39 @@
+---
+description: Agentic AI — auto-fix code issues (lint, format, tests)
+alwaysApply: false
+globs: 
+---
+
+# Agentic AI: Auto-Fix Code Issues
+
+When the user asks to **auto-fix issues**, **fix code quality**, **run agentic fix**, or **fix lint/format**, do the following in order.
+
+## 1. Run auto-fix pipeline
+
+1. **Lint with auto-fix:** `npm run lint:fix`
+   - Fixes: unused vars (where safe), quote style, semicolons, and other ESLint --fix rules.
+2. **Format:** `npm run format`
+   - Prettier formats all JS under `app/`, `server/`, `scripts/`, `tests/`, and config files.
+3. If either step reports errors that cannot be auto-fixed, **fix them in code** (e.g. add missing variables, fix syntax, satisfy lint rules), then re-run until clean.
+
+## 2. Run tests
+
+- Run `npm test`. If any test fails, fix the cause (logic or test) and re-run until all pass.
+
+## 3. Optional — single command
+
+- **Full pipeline (lint:fix + format + tests):** `npm run auto-fix` (runs `scripts/auto-fix.js`).
+- **Lint + format only:** `npm run fix` (no tests).
+
+## 4. What to fix manually when lint:fix leaves errors
+
+- **no-undef:** Define the variable, or add to `globals` in `eslint.config.js` if it is a global (e.g. browser or test).
+- **no-unused-vars:** Remove the variable, or prefix with `_` if intentionally unused.
+- **Parsing errors:** Fix syntax (missing bracket, invalid character).
+- **Prettier/format conflicts:** Run `npm run format` again after editing.
+
+## Constraints
+
+- Do not ask for clarification; apply sensible fixes and document in a one-line summary if needed.
+- Prefer keeping existing behavior; only change logic when fixing a real bug identified by tests or lint.
+- After auto-fix, report briefly: "Ran lint:fix + format; tests: X passed." and list any remaining manual fixes if applicable.

@@ -1,0 +1,22 @@
+{
+  "name": "Pickleball Community",
+  "short_name": "Pickleball",
+  "description": "Find courts, events, and players near you",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f8f5",
+  "theme_color": "#80f20d",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBjcXVDOMD2-VXu2A2iBCoXB5LDaO26iuIAQ-lPQ5JuAZSBXfbCjHboooLZwoj0V76aKbemIc9U3vUI-8p0KZrhhgKYgC9g550o0deo2hlpJz7-1kAOzBlV6QU7ingYnVYzyOWYXFnDDTaIjSUrHn1GSRhsAOqSX_7XMgmKRHLwAp32PGrLiLwx3P_4tC__x1Ufwjvuscmo2YjbG06L7JrxgLbeuUgOsQka1uEzKs4hkv7uRBjtu7DwnnSm__4Jk00ZqqQJ3-rm38U",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBjcXVDOMD2-VXu2A2iBCoXB5LDaO26iuIAQ-lPQ5JuAZSBXfbCjHboooLZwoj0V76aKbemIc9U3vUI-8p0KZrhhgKYgC9g550o0deo2hlpJz7-1kAOzBlV6QU7ingYnVYzyOWYXFnDDTaIjSUrHn1GSRhsAOqSX_7XMgmKRHLwAp32PGrLiLwx3P_4tC__x1Ufwjvuscmo2YjbG06L7JrxgLbeuUgOsQka1uEzKs4hkv7uRBjtu7DwnnSm__4Jk00ZqqQJ3-rm38U",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

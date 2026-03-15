@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pickleball Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#80f20d",
+                        "background-light": "#f7f8f5",
+                        "background-dark": "#192210",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative mx-auto min-h-screen max-w-md flex flex-col bg-background-light dark:bg-background-dark shadow-xl">
+<!-- Top Bar -->
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md pt-6 px-4">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/30">
+<img class="w-full h-full object-cover" data-alt="User profile avatar smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjcXVDOMD2-VXu2A2iBCoXB5LDaO26iuIAQ-lPQ5JuAZSBXfbCjHboooLZwoj0V76aKbemIc9U3vUI-8p0KZrhhgKYgC9g550o0deo2hlpJz7-1kAOzBlV6QU7ingYnVYzyOWYXFnDDTaIjSUrHn1GSRhsAOqSX_7XMgmKRHLwAp32PGrLiLwx3P_4tC__x1Ufwjvuscmo2YjbG06L7JrxgLbeuUgOsQka1uEzKs4hkv7uRBjtu7DwnnSm__4Jk00ZqqQJ3-rm38U"/>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-slate-500 dark:text-slate-400">Welcome back</p>
+<h2 class="text-lg font-bold leading-none">Alex Rivers</h2>
+</div>
+</div>
+<button class="size-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">notifications</span>
+</button>
+</div>
+<!-- Location Filter -->
+<div class="flex gap-3 mb-4">
+<button class="flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-3 py-1.5 text-slate-800 dark:text-slate-200">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-sm font-semibold">Austin, TX</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<!-- Tabs -->
+<div class="flex border-b border-slate-200 dark:border-slate-800 gap-6">
+<a class="relative flex flex-col items-center justify-center pb-3 text-sm font-bold text-slate-900 dark:text-white" href="#">
+<span>Events</span>
+<div class="absolute bottom-0 w-full h-[3px] bg-primary rounded-t-full"></div>
+</a>
+<a class="flex flex-col items-center justify-center pb-3 text-sm font-bold text-slate-400 hover:text-slate-600 dark:text-slate-500" href="#">
+<span>Tournaments</span>
+</a>
+<a class="flex flex-col items-center justify-center pb-3 text-sm font-bold text-slate-400 hover:text-slate-600 dark:text-slate-500" href="#">
+<span>Courts</span>
+</a>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 p-4 space-y-4 pb-24">
+<!-- Event Card 1 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="relative h-48 w-full">
+<img class="w-full h-full object-cover" data-alt="Outdoor pickleball courts at Zilker Park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPdWxN_bN42f4hsLIk5-ZD8imSUI9zkFhpnRRDjMv8W24Y84jSqZ4k2WX_PDDVGnYJft5PDbzImS1MgLn13bk4-5kNPPJ_NHBut5IWhpxIzlLGTU_v26wtucbBzbAMZLg3Ef6DnOpGlzphVrAP_wjzKGc_4cc2drTCjPNU2eb0scFFohiccBl3FQmyEtJaXEqfBb2ivAz7mtJRYyrTy_Db9dYpz1UmJ4TtUI2pX_J-IYl0WFZDD_6WLiZ4orpgmCWeqLf6iRwqVCQ"/>
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-amber-500 text-sm active-icon">wb_sunny</span>
+<span class="text-xs font-bold text-slate-800 dark:text-slate-100">72° Sunny</span>
+</div>
+<div class="absolute bottom-3 right-3">
+<div class="flex -space-x-2">
+<img class="size-8 rounded-full border-2 border-white dark:border-slate-800 object-cover" data-alt="Host avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi0hYG5mSi8uhcX2H-MJDLGsraIcYF38DVAuTb7g8IxbqkgT5l0HUCiOrJWig3WE9EBGeFLEy_FG5CPj-rpykTKEd15brOfkm5enAfrcAQ7azzI_e1Xee_nHp4JvEErg2AA_0pTZV-BA-JoxZuNWdXdvCWKOOlIkD2BJqLiDDuXIIgi2M5fBhu2OmZB5iPBXR7W4UpJlOYRPkCLk9prF0cA8aawi3P0-DMGRMt4VZIscZ9LGiI7rro87tLye1Tg_yTwJwNgPtQn50"/>
+<img class="size-8 rounded-full border-2 border-white dark:border-slate-800 object-cover" data-alt="Player avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIhOLqmkxVLBW5D9Tjk0GnbUzW2b0dVkUNbnkHUL0m5g-eUMl2z-RoBZyQUS09hG-aqvg5k10oHxRpBdkd6nSVjhvjJUHKVJUH_8JvgLpOXRLz4DSGqyhSb01qQyIEgDWCqd5AedUAZww-H0LwSj-9WxQFBh50U_iL0URIcN_M-bmMmgrJRRvLYa2OFbrQ6g3xwxz7oOs7htVQl6larGt-g93kNAJOH217e3wVordB2lQOrj9vrP7wkPgQPaYBE5BaeyVn0lnaDDY"/>
+<img class="size-8 rounded-full border-2 border-white dark:border-slate-800 object-cover" data-alt="Player avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU_76XI0UZnUa7AgY7tS9l4ltk3iPrFkaeWdG1pRk9_YRRCTMcF9ZPNXTmTbH1STmFn0HJ3235MDEYVmG5G5NweS-pOS02UgvwTInJDwzUaUXV-J7kJgwMfRcAgQH3kvQS-FdMcJRakyjudTiEx24Ucr0AmLo7C2M5FjQdeFnizRVN5idJ7UB-_EhosNkp-3e3RLtjTzNYKgBFJ70MvnzdYfetTuzmK8KhOE-z41SQgX4t2YRhHzOL5PQNmr_VXzDZKnlMbiIetIM"/>
+<div class="size-8 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                                +1
+                            </div>
+</div>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Morning Doubles Open</h3>
+<span class="bg-primary/20 text-slate-800 dark:text-primary px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Intermediate</span>
+</div>
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">event</span>
+<span>Sat, 9:00 AM • Zilker Park Courts</span>
+</div>
+<div class="flex flex-wrap gap-x-3 gap-y-1 text-slate-400 dark:text-slate-500 text-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">near_me</span>
+<span>1.2 mi</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">sports_tennis</span>
+<span>Doubles</span>
+</div>
+<div class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-sm">group</span>
+<span>3/4 joined</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-slate-900 font-bold py-3 rounded-xl transition-colors shadow-lg shadow-primary/20">
+                        Join Game
+                    </button>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700 opacity-90">
+<div class="relative h-48 w-full">
+<img class="w-full h-full object-cover" data-alt="Indoor community pickleball match" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZjxHVHFIGKPxWGK8SsoDN7ocdMziQl_z0ad40AZxumD2o9VjWyKv1JwTvRJg4IW4X_ELv7nEqJxVpmgATo6la0ee6un3vmbIvIJ7KaGCXFrfmOxrRmA9GAM7X5JKEQN7gdv02s3u2WtxklKkjMAgy61WHUnxA2-4iS-2plhnOh7Tb443psfx8menDN93Uf9BU2ebJ69DmhHoDVGn2PehAGdLfneWe1JFBXmW1LRIhad_1kRcAHWGkLgArm5My4w10-8k6Ad_DU2k"/>
+<div class="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-blue-400 text-sm">cloud</span>
+<span class="text-xs font-bold text-slate-800 dark:text-slate-100">68° Cloudy</span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Beginner Drills &amp; Play</h3>
+<span class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Beginner</span>
+</div>
+<div class="space-y-1.5 mb-4">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
+<span class="material-symbols-outlined text-base">event</span>
+<span>Sun, 11:30 AM • Austin High Courts</span>
+</div>
+<div class="flex flex-wrap gap-x-3 gap-y-1 text-slate-400 dark:text-slate-500 text-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">near_me</span>
+<span>2.8 mi</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">sports_tennis</span>
+<span>Instructional</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">group</span>
+<span>8/12 joined</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-bold py-3 rounded-xl transition-colors">
+                        Reserve Spot
+                    </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 px-6 pt-2 pb-6 z-30 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined active-icon text-2xl">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">groups</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Players</span>
+</a>
+<div class="relative -top-6">
+<button class="bg-primary size-14 rounded-full flex items-center justify-center shadow-xl shadow-primary/40 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-slate-900 text-3xl font-bold">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">chat_bubble</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Chat</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

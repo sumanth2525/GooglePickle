@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Firebase connection check</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 32rem; margin: 2rem auto; padding: 1rem; }
+    h1 { font-size: 1.25rem; }
+    .ok { color: #0a0; }
+    .err { color: #c00; }
+    pre { background: #f0f0f0; padding: 1rem; border-radius: 0.5rem; overflow: auto; }
+  </style>
+</head>
+<body>
+  <h1>Firebase API connection check</h1>
+  <p id="status">Loading…</p>
+  <pre id="result"></pre>
+  <script src="js/config.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="js/services/firebase-auth.js"></script>
+  <script>
+    (function () {
+      var status = document.getElementById("status");
+      var result = document.getElementById("result");
+      function done(ok, msg, data) {
+        status.textContent = msg;
+        status.className = ok ? "ok" : "err";
+        result.textContent = JSON.stringify(data, null, 2);
+      }
+      FirebaseAuthService.init();
+      FirebaseAuthService.checkConnection().then(function (r) {
+        if (r.ok) {
+          done(true, "Firebase Auth connected.", r);
+        } else {
+          done(false, "Firebase connection failed.", r);
+        }
+      }).catch(function (e) {
+        done(false, "Check error: " + e.message, { error: e.message });
+      });
+    })();
+  </script>
+</body>
+</html>

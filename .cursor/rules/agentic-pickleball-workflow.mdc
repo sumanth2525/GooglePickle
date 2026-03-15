@@ -1,0 +1,42 @@
+# Agentic AI: Pickleball App Audit & Hardening Workflow
+
+When the user asks to run the **agentic workflow**, **audit the app**, or **agentic AI**, execute these phases in order. Loop until all checks pass.
+
+## PHASE 1 — CODE REVIEW & AUDIT
+- Read every project source file (exclude `node_modules`, `test-results`).
+- Identify: bugs, logic errors, missing features, security vulnerabilities.
+- Check: SQL injection, XSS, auth bypass, insecure API keys, race conditions.
+- List findings with severity: **CRITICAL** / **HIGH** / **MEDIUM** / **LOW**.
+
+## PHASE 2 — FIX ALL ISSUES
+- For each finding: state WHAT and WHY, apply the fix, preserve existing behavior.
+- Standards: input validation on user-facing fields, env vars for secrets (no hardcoded keys), clear error handling.
+
+## PHASE 3 — PICKLEBALL LOGIC (if scoring/match module exists)
+Verify USA Pickleball rules: rally/traditional scoring, games to 11 (win by 2), match formats (best of 1/3/5), tiebreaker to 15, server rotation, score announcement order, kitchen fault, lets/faults, side switch at 6, timeouts (2 per team per game). If the app has no scoring module, note "N/A — community app" and skip.
+
+## PHASE 4 — RUN & VERIFY
+1. `npm install`
+2. `npm run build` (if exists) — fix all build errors.
+3. `npm test` — fix all failing tests.
+4. `npm run lint` (if exists) — fix all lint errors.
+5. Start app: `npm run serve:app` or `npm start`.
+6. Confirm server starts. On failure → return to Phase 2.
+
+## PHASE 5 — SECURITY HARDENING
+- Rate limiting on API endpoints.
+- Auth: JWT or session with expiry.
+- CORS: allowed origins only.
+- Helmet (or equivalent) for HTTP headers.
+- Parameterized DB queries; no raw SQL with user input.
+- Passwords hashed (e.g. bcrypt, salt rounds ≥ 12).
+- No sensitive data in client-facing logs or error bodies.
+
+## PHASE 6 — FINAL REPORT
+Produce: Bugs Fixed, Security Resolved, Pickleball Rules (or N/A), Known TODOs, How to run.
+
+## CONSTRAINTS
+- Do not ask for clarification mid-task; decide and document.
+- Create missing files if needed. If stack is unclear, assume vanilla JS + Express (this project).
+- Commit-ready code: no debug logs, no commented-out blocks.
+- All env vars must have `.env.example` with placeholders.

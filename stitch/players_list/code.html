@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pickleball Players</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#80f20d",
+                        "background-light": "#f7f8f5",
+                        "background-dark": "#192210",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased min-h-screen pb-24">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-6 pb-2">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">sports_tennis</span>
+<h1 class="text-xl font-bold tracking-tight">Players</h1>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-primary/10 text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400">search</span>
+</div>
+<input class="block w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary text-sm shadow-sm" placeholder="Search by name, city, or club..." type="text"/>
+</div>
+<!-- Skill Filters -->
+<div class="flex gap-2 py-4 overflow-x-auto no-scrollbar">
+<button class="px-4 py-2 rounded-full bg-primary text-slate-900 text-sm font-semibold whitespace-nowrap">All Players</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-200 dark:border-slate-700 whitespace-nowrap hover:bg-primary/10">Beginner</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-200 dark:border-slate-700 whitespace-nowrap hover:bg-primary/10">Intermediate</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-200 dark:border-slate-700 whitespace-nowrap hover:bg-primary/10">Advanced</button>
+<button class="px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium border border-slate-200 dark:border-slate-700 whitespace-nowrap hover:bg-primary/10">Pro</button>
+</div>
+</header>
+<!-- Player List Container -->
+<main class="px-4 space-y-4">
+<!-- Player Card 1 -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="p-4 flex gap-4">
+<div class="relative flex-shrink-0">
+<div class="w-20 h-20 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Close up portrait of a smiling male player" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhVZLBAp50J9Go-4Aezg4IIBijTKB8Trh1AAbe8pShSNf_xs9R6P8JvHRfAzVAqFia14R7TunTQasydgKbO4SHQZ5xcXWmf87cXS8U90bvKpWq1MocuL7u9Tf113EsjgkuZqwZ4mfOoHlPxvS4THRqXaADq0MbMcl7R4_uDgJRERkT5vS0AmJLzaVf3P44XtGAnmq3fwEciGHmglBbAcHZMcDUqBB59hzy-SzhLOBy-L_ikPT8GcRdTtZQdvBBo7qbmrjry9Pa4NI')"></div>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-green-500 border-2 border-white dark:border-slate-800 rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold">Alex Rivers, 28</h3>
+<p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Austin, TX</p>
+</div>
+<span class="px-2 py-1 bg-primary/20 text-slate-900 dark:text-primary text-[10px] font-bold rounded uppercase">Intermediate</span>
+</div>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-400 italic">"Always down for doubles!"</p>
+</div>
+</div>
+<div class="px-4 pb-4 flex gap-2">
+<button class="flex-1 bg-primary hover:opacity-90 text-slate-900 font-bold py-2 rounded-xl text-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-lg">person_add</span>
+                    Add Friend
+                </button>
+<button class="flex-1 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 font-bold py-2 rounded-xl text-sm">
+                    View Profile
+                </button>
+</div>
+</div>
+<!-- Player Card 2 -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="p-4 flex gap-4">
+<div class="relative flex-shrink-0">
+<div class="w-20 h-20 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Portrait of a female athlete wearing a headband" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-1ili5Ekj5HFDqmDS_C07NI0uF7KcTFNIVgmxDHwIiFV5uM5AsZA6z9f9L72qyU9wncb4lyEuqu-v6O4wGYJzRhmWllb99EY7enMgl15rn0U9pKe9QVPoXX4ySh3LpZth6MwN08D_TKUC-Cw7YUELNssxhgu07iRWnznDlqFOz2V6-mZE7h6R9oJUpFvjCTIz-lAbrv7lkh56WU9rsRZ3svsRgJbqfKilSWheHky-IWtu9gPNaSRGegyfwo2wYiOMhq5cjg1eN4I')"></div>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-slate-300 border-2 border-white dark:border-slate-800 rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold">Sarah Chen, 31</h3>
+<p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Round Rock, TX</p>
+</div>
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 text-[10px] font-bold rounded uppercase">Advanced</span>
+</div>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-400 italic">"Looking for competitive tournament partners."</p>
+</div>
+</div>
+<div class="px-4 pb-4 flex gap-2">
+<button class="flex-1 bg-primary hover:opacity-90 text-slate-900 font-bold py-2 rounded-xl text-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-lg">person_add</span>
+                    Add Friend
+                </button>
+<button class="flex-1 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 font-bold py-2 rounded-xl text-sm">
+                    View Profile
+                </button>
+</div>
+</div>
+<!-- Player Card 3 -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="p-4 flex gap-4">
+<div class="relative flex-shrink-0">
+<div class="w-20 h-20 rounded-full bg-cover bg-center border-2 border-primary/30" data-alt="Portrait of a young man in tennis gear" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXXLtT_Y0KGbhdus9gvoU03KtjYGtJI1sBxWwN0jp4MxRk7k4majHYGbSTZzalvGsUgZ9sT7uET5iUJywJh3bMTbzorvK8VkBZxEKyDrTG-lZbKOKJURqw1H18dZibnfqpNw_g0GFJqZ2YH1alPfNjY_JTochd6Tgehor6sVFbQ5qYWH5MeOncU8kYEBwiThD-kgG-8W-9W7T_J-cV-qPiwUnMXwQ9VaaTSJfwSho11el-JOeEhFL6bQUdLyEXhCZBX1eesu67JgA')"></div>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-green-500 border-2 border-white dark:border-slate-800 rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold">Jordan Miller, 24</h3>
+<p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Austin, TX</p>
+</div>
+<span class="px-2 py-1 bg-primary/20 text-slate-900 dark:text-primary text-[10px] font-bold rounded uppercase">Beginner</span>
+</div>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-400 italic">"Just started! Want to practice basics."</p>
+</div>
+</div>
+<div class="px-4 pb-4 flex gap-2">
+<button class="flex-1 bg-primary hover:opacity-90 text-slate-900 font-bold py-2 rounded-xl text-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-lg">person_add</span>
+                    Add Friend
+                </button>
+<button class="flex-1 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 font-bold py-2 rounded-xl text-sm">
+                    View Profile
+                </button>
+</div>
+</div>
+<!-- Player Card 4 -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="p-4 flex gap-4">
+<div class="relative flex-shrink-0">
+<div class="w-20 h-20 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Portrait of a confident female pickleball player" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWu7uC4WP_m696fkDC-QCau_5yo8e4Gkjh1mrD5FhgTP-3Vyk5tU2LSfspYQVoFgvieFyqBNc5AglIW2oP2GmzP35kfUzfPPGbOTpsiKLZB2xLybIDJz2I_qEYQvKqYEI6EQw3_8Z7NqC_vPBP2deh1zalFaT2Yv2jizpjIWDXnAHpwiS9DFcec7pzhgxTXPHko3TlQqGjCXWrgqz8xfG07JzwsED968LE_3Gz50kqVYJYbf2Rf4kfD-hgBIDqRfs0KLQ3ZDBC3Mc')"></div>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-green-500 border-2 border-white dark:border-slate-800 rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold">Maya Rodriguez, 29</h3>
+<p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Cedar Park, TX</p>
+</div>
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 text-[10px] font-bold rounded uppercase">Advanced</span>
+</div>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-400 italic">"Drills or games, I'm ready."</p>
+</div>
+</div>
+<div class="px-4 pb-4 flex gap-2">
+<button class="flex-1 bg-primary hover:opacity-90 text-slate-900 font-bold py-2 rounded-xl text-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-lg">person_add</span>
+                    Add Friend
+                </button>
+<button class="flex-1 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 font-bold py-2 rounded-xl text-sm">
+                    View Profile
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-6 py-3 pb-8 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Courts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">group</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Players</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Leagues</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Profile</span>
+</a>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>
